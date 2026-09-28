@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: lms-pasteleria-db
+    environment:
+      POSTGRES_DB: lms_pasteleria
+      POSTGRES_USER: lms_user
+      POSTGRES_PASSWORD: lms_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - lms_pgdata:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    container_name: lms-pasteleria-adminer
+    ports:
+      - "8081:8080"
+    depends_on:
+      - postgres
+
+volumes:
+  lms_pgdata:
