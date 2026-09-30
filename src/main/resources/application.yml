@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/lms_pasteleria
+    url: jdbc:postgresql://localhost:5433/lms_pasteleria
     username: lms_user
     password: lms_pass
     driver-class-name: org.postgresql.Driver
